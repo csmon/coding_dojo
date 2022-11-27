@@ -4,23 +4,21 @@
 #include <gmock/gmock.h>
 #include "Tennis.hpp"
 
+std::map<int, std::string> number_to_string_map = 
+{
+    {0, "Love"},
+    {1, "Fifteen"},
+    {2, "Thirty"},
+    {3, "Forty"}
+};
+
 std::string Tennis::output()
 {
     std::string result = "";
 	if (player1Score == 0 && player2Score == 0)
 		result = "Love-All";
-	if (player1Score == 1 && player2Score == 0)
-		result = "Fifteen-Love";
-	if (player1Score == 2 && player2Score == 0)
-		result = "Thirty-Love";
-	if (player1Score == 3 && player2Score == 0)
-		result = "Forty-Love";
-	if (player1Score == 0 && player2Score == 1)
-		result = "Love-Fifteen";
-	if (player1Score == 0 && player2Score == 2)
-		result = "Love-Thirty";
-	if (player1Score == 0 && player2Score == 3)
-		result = "Love-Forty";
+	else
+		result = number_to_string_map[player1Score] + "-" + number_to_string_map[player2Score];
     return result;      
 }
 
