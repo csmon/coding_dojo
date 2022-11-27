@@ -14,6 +14,7 @@ public:
 	};
 	std::string output();
 	bool isDuece();
+	bool isAdvantage();
 private:
 	int player1Score;
 	int player2Score;

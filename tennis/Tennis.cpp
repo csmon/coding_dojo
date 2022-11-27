@@ -19,9 +19,19 @@ bool Tennis::isDuece()
 	return false;
 }
 
+bool Tennis::isAdvantage()
+{
+	if ((player1Score >= 4) && (player1Score == player2Score + 1))
+		return true;
+	if ((player2Score >= 4) && (player2Score == player1Score + 1))
+		return true;
+	return false;
+}
 
 std::string Tennis::output()
 {
+	if (isAdvantage())
+		return (player1Score > player2Score)?"Advantage-Player1":"Advantage-Player2";
 	if (isDuece())
 		return "Deuce";
 

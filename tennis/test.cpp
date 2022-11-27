@@ -85,3 +85,14 @@ TEST_F(TennisTest, test_3040_15)
     tennis.addPlayer1Score(1);
     ASSERT_EQ("Forty-Fifteen", tennis.output());
 }
+
+TEST_F(TennisTest, test_adv)
+{
+    tennis.addPlayer1Score(3);
+    tennis.addPlayer2Score(4);
+    ASSERT_EQ("Advantage-Player2", tennis.output());
+    tennis.addPlayer1Score(2);
+    ASSERT_EQ("Advantage-Player1", tennis.output());
+    tennis.addPlayer2Score(2);
+    ASSERT_EQ("Advantage-Player2", tennis.output());
+}
