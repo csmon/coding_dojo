@@ -13,6 +13,7 @@ public:
 		player2Score += score;
 	};
 	std::string output();
+	bool isDuece();
 private:
 	int player1Score;
 	int player2Score;

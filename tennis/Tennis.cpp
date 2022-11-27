@@ -12,17 +12,23 @@ std::map<int, std::string> number_to_string_map =
     {3, "Forty"}
 };
 
+bool Tennis::isDuece()
+{
+	if ((player1Score == player2Score) && (player1Score >= 3))
+		return true;
+	return false;
+}
+
+
 std::string Tennis::output()
 {
-    std::string result = "";
-	if (player1Score == player2Score) {
-		if (player1Score >= 3)
-			result = "Deuce";
-		else
-			result = number_to_string_map[player1Score] + "-All";
-	} else
-		result = number_to_string_map[player1Score] + "-" + number_to_string_map[player2Score];
-    return result;      
+	if (isDuece())
+		return "Deuce";
+
+	if (player1Score == player2Score)
+		return number_to_string_map[player1Score] + "-All";
+
+	return number_to_string_map[player1Score] + "-" + number_to_string_map[player2Score];
 }
 
 int main(int argc, char** argv)
