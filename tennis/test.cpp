@@ -67,3 +67,21 @@ TEST_F(TennisTest, test_Deuce)
     tennis.addPlayer2Score(3);
     ASSERT_EQ("Deuce", tennis.output());
 }
+
+TEST_F(TennisTest, test_15_3040)
+{
+    tennis.addPlayer1Score(1);
+    tennis.addPlayer2Score(2);
+    ASSERT_EQ("Fifteen-Thirty", tennis.output());
+    tennis.addPlayer2Score(1);
+    ASSERT_EQ("Fifteen-Forty", tennis.output());
+}
+
+TEST_F(TennisTest, test_3040_15)
+{
+    tennis.addPlayer1Score(2);
+    tennis.addPlayer2Score(1);
+    ASSERT_EQ("Thirty-Fifteen", tennis.output());
+    tennis.addPlayer1Score(1);
+    ASSERT_EQ("Forty-Fifteen", tennis.output());
+}
