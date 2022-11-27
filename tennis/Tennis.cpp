@@ -19,6 +19,15 @@ bool Tennis::isDuece()
 	return false;
 }
 
+bool Tennis::isWin()
+{
+	if ((player1Score >= 4) && (player1Score == player2Score + 2))
+		return true;
+	if ((player2Score >= 4) && (player2Score == player1Score + 2))
+		return true;
+	return false;
+}
+
 bool Tennis::isAdvantage()
 {
 	if ((player1Score >= 4) && (player1Score == player2Score + 1))
@@ -30,6 +39,8 @@ bool Tennis::isAdvantage()
 
 std::string Tennis::output()
 {
+	if (isWin())
+		return (player1Score > player2Score)?"Player1-Win":"Player2-Win";
 	if (isAdvantage())
 		return (player1Score > player2Score)?"Advantage-Player1":"Advantage-Player2";
 	if (isDuece())

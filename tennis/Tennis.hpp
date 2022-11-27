@@ -15,6 +15,7 @@ public:
 	std::string output();
 	bool isDuece();
 	bool isAdvantage();
+	bool isWin();
 private:
 	int player1Score;
 	int player2Score;

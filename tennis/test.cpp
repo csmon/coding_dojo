@@ -96,3 +96,12 @@ TEST_F(TennisTest, test_adv)
     tennis.addPlayer2Score(2);
     ASSERT_EQ("Advantage-Player2", tennis.output());
 }
+
+TEST_F(TennisTest, test_win)
+{
+    tennis.addPlayer1Score(2);
+    tennis.addPlayer2Score(4);
+    ASSERT_EQ("Player2-Win", tennis.output());
+    tennis.addPlayer1Score(4);
+    ASSERT_EQ("Player1-Win", tennis.output());
+}
