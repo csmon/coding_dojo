@@ -44,3 +44,13 @@ TEST_F(TennisTest, test_0_3)
     tennis.addPlayer2Score(1);
     ASSERT_EQ("Love-Forty", tennis.output());
 }
+
+TEST_F(TennisTest, test_all)
+{
+    tennis.addPlayer1Score(1);
+    tennis.addPlayer2Score(1);
+    ASSERT_EQ("Fifteen-All", tennis.output());
+    tennis.addPlayer1Score(1);
+    tennis.addPlayer2Score(1);
+    ASSERT_EQ("Thirty-All", tennis.output());
+}
