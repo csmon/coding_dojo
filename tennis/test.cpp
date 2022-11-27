@@ -54,3 +54,16 @@ TEST_F(TennisTest, test_all)
     tennis.addPlayer2Score(1);
     ASSERT_EQ("Thirty-All", tennis.output());
 }
+
+TEST_F(TennisTest, test_Deuce)
+{
+    tennis.addPlayer1Score(3);
+    tennis.addPlayer2Score(3);
+    ASSERT_EQ("Deuce", tennis.output());
+    tennis.addPlayer1Score(1);
+    tennis.addPlayer2Score(1);
+    ASSERT_EQ("Deuce", tennis.output());
+    tennis.addPlayer1Score(3);
+    tennis.addPlayer2Score(3);
+    ASSERT_EQ("Deuce", tennis.output());
+}

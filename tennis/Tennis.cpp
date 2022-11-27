@@ -15,9 +15,12 @@ std::map<int, std::string> number_to_string_map =
 std::string Tennis::output()
 {
     std::string result = "";
-	if (player1Score == player2Score)
-		result = number_to_string_map[player1Score] + "-All";
-	else
+	if (player1Score == player2Score) {
+		if (player1Score >= 3)
+			result = "Deuce";
+		else
+			result = number_to_string_map[player1Score] + "-All";
+	} else
 		result = number_to_string_map[player1Score] + "-" + number_to_string_map[player2Score];
     return result;      
 }
